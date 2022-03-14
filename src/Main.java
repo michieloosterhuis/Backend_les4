@@ -1,31 +1,27 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
+        ElectricPokemon pikachu = new ElectricPokemon("Pikachu", 15,"hete bliksem", "Fizzz");
+        FirePokemon charmander = new FirePokemon("Charmander", 32, "brandhout", "Blizzz");
+        WaterPokemon squirtle = new WaterPokemon("Squirtle", 23, "zeewier", "Blubzzz");
+        GrassPokemon bulbasaur = new GrassPokemon("Bulbasaur", 55, "bloemetjes", "Wozzz");
 
+        ArrayList<Pokemon> pokemonList = new ArrayList<>();
+        pokemonList.add(pikachu);
+        pokemonList.add(charmander);
+        pokemonList.add(squirtle);
+        pokemonList.add(bulbasaur);
 
-        Pikachu pikachu = new Pikachu(
-                "electric",
-                "Pikachu",
-                2,
-                "yellow",
-                true,
-                22.4);
-        pikachu.speaks();
-        pikachu.eats();
+        for (Pokemon pokemon : pokemonList) {
+            pokemon.speaks();
+            pokemon.eats();
+            System.out.println();
+        }
+
         pikachu.thunderPunch();
-        pikachu.voltTackle(230);
-        System.out.println("Number of pokemon: " + pikachu.getPokemonAmount());
-
-        Charmander charmander = new Charmander(
-                "fire",
-                "Charmander",
-                76.3,
-                true,
-                6,
-                "green");
-        charmander.speaks();
-        charmander.eats();
-        charmander.fireLash();
         charmander.flameThrower();
-        System.out.println("Number of pokemon: " + charmander.getPokemonAmount());
+        squirtle.hydroPump();
+        bulbasaur.leafStorm();
     }
 }
